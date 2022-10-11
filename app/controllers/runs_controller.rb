@@ -47,6 +47,16 @@ class RunsController < ApplicationController
         end
     end
 
+    def fastest_mile
+        run = user.runs.minimum(:fastest_split)
+        if run 
+            
+            render json: run, status: :ok 
+        else 
+            render json: {error: ["Enter some run data to find your fastest mile so far."]}, status: :not_found 
+        end
+    end
+
     private
 
     def run_params 
