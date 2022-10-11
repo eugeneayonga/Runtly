@@ -25,6 +25,16 @@ class UsersController < ApplicationController
         end
     end
 
+    def most_runs 
+        user = User.most_runs
+        render json: user, status: :ok
+    end
+
+    def most_runs_1 
+        user = User.count(:run)
+        render json: user, status: :ok
+    end
+
     private
     
     def user_params 
