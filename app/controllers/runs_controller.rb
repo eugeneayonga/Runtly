@@ -57,6 +57,11 @@ class RunsController < ApplicationController
         end
     end
 
+    def longest_run
+        run = Run.longest_run
+        render json: run, status: :ok
+    end
+
     private
 
     def run_params 
