@@ -28,9 +28,22 @@ class RunsController < ApplicationController
     end
 
     def update
+        run = user.runs.find_by(id: params[:id])
+        if run
+            run.update(run_params)
+            render json: run, status: :accepted
+        else
+            render json: {error: "Not found"}, status: :not_found
+        end
     end
 
     def destroy
+    end
+
+    private
+
+    def run_params 
+        params.require(:run).permit(:date, :distance, :total_time, :calories, :elevation, :average_heartrate, :average_pace, :fastest_split, :favorite, :user_id)
     end
 
 end
