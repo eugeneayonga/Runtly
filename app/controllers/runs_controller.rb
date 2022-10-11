@@ -19,6 +19,12 @@ class RunsController < ApplicationController
     end
 
     def create
+        run = user.runs.create(run_params)
+        if run.valid?
+            render json: run, status: :created
+        else
+            render json: {error: run.errors.full_messages}, status: :unprocessable_entity
+        end
     end
 
     def update
