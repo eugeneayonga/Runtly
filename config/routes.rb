@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  get "/fastest_mile", to: "runs#fastest_mile"
+
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
