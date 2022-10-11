@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get "/fastest_mile", to: "runs#fastest_mile"
 
+  get "/longest_run", to: "runs#longest_run"
+
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
