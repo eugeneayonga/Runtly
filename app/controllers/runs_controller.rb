@@ -14,7 +14,7 @@ class RunsController < ApplicationController
         if run
             render json: run, status: :ok
         else
-            render json: {error: ["Unauthorized Access"]}, status: :unauthorized
+            render json: {error: "NOt found"}, status: :unauthorized
         end
     end
 
