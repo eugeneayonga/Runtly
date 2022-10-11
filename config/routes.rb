@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get "/longest_run", to: "runs#longest_run"
 
+  get "/find_heartrate", to: "runs#find_heartrate"
+
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
