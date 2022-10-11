@@ -61,6 +61,12 @@ class RunsController < ApplicationController
         run = Run.longest_run
         render json: run, status: :ok
     end
+    
+    def find_heartrate 
+        runs = Run.search(params[:average_heartrate])
+        user_runs = runs.where(user_id: user.id)
+        render json: user_runs 
+    end
 
     private
 
