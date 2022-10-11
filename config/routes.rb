@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "/find_heartrate", to: "runs#find_heartrate"
 
+  get "/me", to: "users#show"
+
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
