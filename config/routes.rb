@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   resources :runs, only: [:index, :create, :show, :update, :destroy]
 
+  resources :users
+
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
