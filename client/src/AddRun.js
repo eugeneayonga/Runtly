@@ -28,7 +28,9 @@ function AddRun({ addRuns }) {
       average_pace: newRun.average_pace,
       fastest_split: newRun.fastest_split,
     };
-    fetch("/api/runs", {
+
+    // changed route
+    fetch("/runs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(addNewRun),

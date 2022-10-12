@@ -2,7 +2,7 @@ import React from "react";
 
 function DeleteButton({ handleDeleteRun, run }) {
   function deleteRun() {
-    fetch(`/api/runs/${run.id}`, {
+    fetch(`/runs/${run.id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     });

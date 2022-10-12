@@ -1,17 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
 function NavBar({ logout }) {
-  const history = useHistory();
+  const navigate = useNavigate();
   function handleLogout() {
-    fetch("/api/logout", {
+    fetch("/logout", {
       method: "DELETE",
     }).then(() => {
       logout();
-      history.push("/");
+      navigate("/");
     });
   }
   return (

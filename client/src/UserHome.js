@@ -9,7 +9,7 @@ function UserHome({ user, logout }) {
   const [sortBy, setSortBy] = useState("fastest_split");
 
   useEffect(() => {
-    fetch("/api/runs")
+    fetch("/runs")
       .then((response) => response.json())
       .then((data) => {
         setRuns(data);
